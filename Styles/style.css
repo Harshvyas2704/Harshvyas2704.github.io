@@ -203,6 +203,31 @@ header .navbar ul li a:hover{
     padding-left: 6rem;
 }
 
+.about .row .skills {
+    display: flex;
+    flex:1 1 48rem;
+    padding:2rem 1rem;
+    padding-left: 6rem;
+    height: 50%;
+    width: 50%;
+    font-size: 2rem;
+    color: #eee;
+}
+
+
+.about .row .skills .margin {
+    margin-right: 6vh;
+}
+
+.about .row .skills .margin li {
+    margin-top: 2vh;
+    color: var(--yellow);
+}
+
+.about .row .skills .margin .sk{
+    color: #eee;
+}
+
 .about .row .info h3{
     font-size: 2rem;
     color:var(--yellow);
