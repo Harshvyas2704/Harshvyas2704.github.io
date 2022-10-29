@@ -265,6 +265,25 @@ header .navbar ul li a:hover{
     color:#fff;
 }
 
+.heading{
+    color: #f9ca24;
+}
+
+.git_cal{
+    
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.git_cal img{
+    height: 20vh;
+    /* border: 1px red solid; */
+    width: 60vw;
+    margin-top: 5vh;
+}
+
 
 .education .box-container{
     display: flex;
@@ -371,8 +390,13 @@ header .navbar ul li a:hover{
     padding: 5px;
     /* height: 20rem; */
     width:100rem;
-    /* border-radius: 10%; */
 }
+
+/* .links .project_container{
+    border: 2px red solid;
+    width: min(100% - 0.5rem, 100%);
+    margin-inline: auto;
+} */
 .project_summary span {
     color: var(--yellow);
     font-size: 2.1rem;
@@ -497,12 +521,42 @@ header .navbar ul li a:hover{
 
 }
 
-@media (max-width:768px){
+@media (max-width:850px){
 
     html{
         font-size: 50%;
     }
- 
+
+    /* .project_details{
+        border: 2px red solid;
+        width: min(100% - 2rem, 24px);
+        margin-inline: auto;
+    } */
+    
+    /* .project_container p{
+        font-size: 2rem;
+        border: 1px red solid;
+    } */
+
+    .links .project_summary{
+        /* font-size: 10px; */
+        /* border: 2px red solid; */
+        /* width: min(100% - 2rem, 80%); */
+        width: 85vw;
+        margin-inline: auto;
+    }
+
+    .portfolio .box-container .box img{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* height: 10vh; */
+        width: 90vw;
+        margin: auto;
+
+    }
+
  }
 
 @media (max-width:400px){
@@ -529,6 +583,14 @@ header .navbar ul li a:hover{
 
     .contact .row form{
         margin:3rem 0;
+    }
+
+    .links .project_summary{
+        /* font-size: 10px; */
+        /* border: 2px red solid; */
+        /* width: min(100% - 2rem, 80%); */
+        width: 85vw;
+        margin-inline: auto;
     }
 
  }
