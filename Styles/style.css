@@ -285,6 +285,17 @@ header .navbar ul li a:hover{
 }
 
 
+.git_stats{
+    margin-top: 5vh;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.git_stats img{
+    width: 48%;
+}
+
 .education .box-container{
     display: flex;
     align-items: center;
@@ -292,8 +303,8 @@ header .navbar ul li a:hover{
     flex-wrap: wrap;
     padding:1rem 0;
     padding-left: 3rem;
-    /* height: 15vh;
-    border: 1px red solid; */
+    /* height: 55vh; */
+    /* border: 1px red solid; */
 }
 
 .education .box-container .box{
@@ -559,7 +570,7 @@ header .navbar ul li a:hover{
 
  }
 
-@media (max-width:400px){
+@media (max-width:415px){
 
     header{
         width: 100vw;
@@ -591,6 +602,16 @@ header .navbar ul li a:hover{
         /* width: min(100% - 2rem, 80%); */
         width: 85vw;
         margin-inline: auto;
+    }
+
+    .git_stats {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .git_stats img{
+        margin-top: 2vh;
     }
 
  }
