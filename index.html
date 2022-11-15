@@ -12,6 +12,14 @@
     <!-- custom css file link  -->
     <link rel="stylesheet" href="/Styles/style.css">
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("0GYIFccQvbDhT86Qs");
+        })();
+    </script>
+
 </head>
 
 <body>
@@ -30,9 +38,12 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About me</a></li>
+                <li><a onclick="window.open('https://drive.google.com/file/d/1bKkod_d6oJ6NnQsg7wKZqdaoyIiOHw60/view?usp=sharing', '_blank')"
+                        ; href="Assits/Harsh-Vyas-Resume.pdf" download target="_blank">Resume </a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#portfolio">Projects</a></li>
-                <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact Me</a></li>
+
             </ul>
         </nav>
 
@@ -77,11 +88,17 @@
                 <h3> <span> Name : </span> Harsh Vyas </h3>
                 <h3> <span> Qualification : </span> B.E. </h3>
                 <h3> <span> Language : </span>English, Hindi, Gujarati </h3>
+                <h3> <span> Soft Skills : </span>Mathametics, Problem Solving </h3>
                 <a href="https://drive.google.com/file/d/1bKkod_d6oJ6NnQsg7wKZqdaoyIiOHw60/view?usp=sharing" download
-                    target="_blank"><button class="btn"> Download Resume <i class="fas fa-download"></i> </button></a>
+                    target="_blank"><button class="btn"> View Resume </button></a>
+
+                <a onclick="window.open('https://drive.google.com/file/d/1bKkod_d6oJ6NnQsg7wKZqdaoyIiOHw60/view?usp=sharing', '_blank')"
+                    ; href="Assits/Harsh-Vyas-Resume.pdf" download target="_blank"><button class="btn">Download Resume
+                        <i class="fas fa-download"></i></button> </a>
+
             </div>
 
-            <div class="skills">
+            <!-- <div class="skills">
                 <div class="frontend margin">
                     <ul>
                         <li class="sk">Frontend
@@ -117,14 +134,14 @@
                     </ul>
 
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <h2 class="heading">Git Calendar</h2>
 
         <div class="git_cal">
 
-            
+
 
             <img src="https://ghchart.rshah.org/Harshvyas2704" alt="git-cal">
         </div>
@@ -134,9 +151,11 @@
         <div class="git_stats">
 
 
-            <img src="https://github-readme-stats.vercel.app/api?username=Harshvyas2704&show_icons=true&locale=en&theme=dark" alt="git stats">
+            <img src="https://github-readme-stats.vercel.app/api?username=Harshvyas2704&show_icons=true&locale=en&theme=dark"
+                alt="git stats">
 
-            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Harshvyas2704&layout=compact&exclude_repo=Lybrate-Website-Clone-Version-2.0,Lybrate-Website-Clone,Adidas-Clone&hide=Shell&border_radius=0&theme=dark" alt="git-stats">
+            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Harshvyas2704&layout=compact&exclude_repo=Lybrate-Website-Clone-Version-2.0,Lybrate-Website-Clone,Adidas-Clone&hide=Shell&border_radius=0&theme=dark"
+                alt="git-stats">
 
 
 
@@ -145,6 +164,88 @@
     </section>
 
     <!-- about section ends -->
+
+    <!-- Skill Section starts -->
+
+
+    <section class="skills" id="skills">
+
+        <h1 class="heading"> <span>Skills & </span> Tools </h1>
+
+        <div class="logo">
+
+            <div>
+
+                <div class="text">
+
+                    <img src="https://spring.io/images/spring-initializr-4291cc0115eb104348717b82161a81de.svg"
+                        alt="Spring-boot">
+                    <p>Spring</p>
+                </div>
+                <div class="text">
+                    <img src="https://cdn.svgporn.com/logos/hibernate.svg" alt="">
+                    <p>Hibernet</p>
+                </div>
+                <div class="text">
+                    <img src="/Tools/sql.png" alt="">
+                    <p>MySql</p>
+                </div>
+                <div class="text">
+
+                    <img src="/Tools/java.png" alt="">
+                    <p>Java</p>
+                </div>
+
+            </div>
+
+            <div>
+
+                <div class="text">
+                    <img src="/Tools/html.png" alt="">
+                    <p>HTML</p>
+                </div>
+                <div class="text">
+                    <img src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_1280.png" alt="">
+                    <p>CSS</p>
+                </div>
+                <div class="text">
+                    <img src="/Tools/dsa.png" alt="">
+                    <p>DSA</p>
+                </div>
+                <div class="text">
+                    <img src="/Tools/js.png" alt="">
+                    <p>JavaScript</p>
+                </div>
+
+            </div>
+
+            <div>
+                <div class="text">
+                    <img src="/Tools/vs.png" alt="">
+                    <p>VScode</p>
+                </div>
+                <div class="text">
+                    <img src="/Tools/git.png" alt="">
+                    <p>Git</p>
+                </div>
+                <div class="text">
+                    <img src="/Tools/IntelliJ.png" alt="">
+                    <p>IntelliJ</p>
+                </div>
+                <div class="text">
+                    <img src="/Tools/post.png" alt="">
+                    <p>Postman</p>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+    <!-- Skill Section ends -->
 
     <!-- education section starts  -->
 
@@ -276,11 +377,11 @@
 
             <form action="">
 
-                <input type="text" placeholder="name" class="box">
-                <input type="email" placeholder="email" class="box">
-                <input type="text" placeholder="project" class="box">
-                <textarea name="" id="" cols="30" rows="10" class="box message" placeholder="message"></textarea>
-                <button type="submit" class="btn"> send <i class="fas fa-paper-plane"></i> </button>
+                <input type="text" placeholder="name" class="box" id="firstName">
+                <input type="email" placeholder="email" class="box" id="emailId">
+                <!-- <input type="text" placeholder="project" class="box"> -->
+                <textarea name="" id="" cols="30" rows="10" class="box message" id="message"  placeholder="message"></textarea>
+                <button type="submit" class="btn" onclick="SendMail()"> send <i class="fas fa-paper-plane"></i> </button>
 
             </form>
 

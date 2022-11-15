@@ -54,6 +54,7 @@ section{
     margin-top: 1rem;
     font-size: 2rem;
     border-radius: 5rem;
+    margin-right: 2vh;
 }
 
 .link{
@@ -295,6 +296,43 @@ header .navbar ul li a:hover{
 .git_stats img{
     width: 48%;
 }
+
+/* tools section */
+
+.skills .logo{
+    display: flex;
+    width: 100%;
+    /* border: 1px red solid; */
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.skills .logo div{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 0vh 0 2vh 0;
+}
+
+.skills .logo img{
+    height: 18vwpx;
+    width: 14vh;
+    margin: 0 7vh 2vh 7vh;
+}
+.text p{
+    color: #f9ca24;
+    font-size: 1.8rem;
+}
+.logo .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* tool section end */
 
 .education .box-container{
     display: flex;
@@ -612,6 +650,12 @@ header .navbar ul li a:hover{
 
     .git_stats img{
         margin-top: 2vh;
+    }
+
+    .skills .logo img{
+        height: 100px;
+        width: 100px;
+        margin: 0 4vh 2vh 4vh;
     }
 
  }

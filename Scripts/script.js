@@ -36,3 +36,15 @@ $(document).ready(function(){
     });
   
   });
+
+  function SendMail(){
+    var params = {
+      from_name : document.getElementById("firstName").value,
+      email_id : document.getElementById("emailId").value,
+      message : document.getElementById("message").value
+    }
+
+    emailjs.send("service_bna9z3v", "template_w82hu9r", params).then(function (res){
+      alert("success!" + res.status);
+    })
+  }
