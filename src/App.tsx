@@ -8,13 +8,17 @@ import Experience from './components/Experience'
 import Skills from './components/Skills'
 import About from './components/About'
 import Contact from './components/Contact'
+import Footer from './components/Footer'
+import { useState } from 'react'
 
 export default function App() {
+  const [mantraRevealed, setMantraRevealed] = useState(false)
+
   return (
     <div className="bg-bg min-h-screen">
       <PointerGlow />
       <Navigation />
-      <HexNav />
+      <HexNav onRevealMantra={() => setMantraRevealed(true)} />
       <Hero />
       <SixFacets />
       <Projects />
@@ -22,9 +26,7 @@ export default function App() {
       <Skills />
       <About />
       <Contact />
-      <footer className="border-t border-white/5 py-8 text-center text-muted text-sm">
-        <p>Designed & built by Harsh Vyas</p>
-      </footer>
+      <Footer revealed={mantraRevealed} />
     </div>
   )
 }

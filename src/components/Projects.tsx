@@ -123,7 +123,7 @@ export default function Projects() {
             Engineering Work
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-cream mb-4">
-            Featured Projects
+            Featured Projects <span className="font-devanagari text-2xl md:text-3xl font-medium text-muted">(कर्म)</span>
           </h2>
           <p className="text-muted text-lg max-w-xl">
             Real products. Real constraints. Real users.

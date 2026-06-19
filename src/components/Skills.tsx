@@ -12,7 +12,7 @@ export default function Skills() {
             Technical Stack
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-cream mb-4">
-            Skills & Technologies
+            Skills & Technologies <span className="font-devanagari text-2xl md:text-3xl font-medium text-muted">(कौशल)</span>
           </h2>
           <p className="text-muted text-lg max-w-xl">
             The tools I reach for — and the ones I've shipped production code with.

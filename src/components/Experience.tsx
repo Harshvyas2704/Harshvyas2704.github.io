@@ -70,7 +70,7 @@ export default function Experience() {
             Work History
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-cream mb-4">
-            Experience
+            Experience <span className="font-devanagari text-2xl md:text-3xl font-medium text-muted">(अनुभव)</span>
           </h2>
           <p className="text-muted text-lg max-w-xl">
             A progression of increasing ownership — from shipping features to leading teams.

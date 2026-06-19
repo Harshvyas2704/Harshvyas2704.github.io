@@ -30,10 +30,12 @@ const outerPoints = [
   [51, 135],
 ] as const
 
-export default function HexNav() {
+export default function HexNav({ onRevealMantra }: { onRevealMantra: () => void }) {
   const [docked, setDocked] = useState(false)
   const [hovered, setHovered] = useState(false)
   const [activeId, setActiveId] = useState('home')
+  const [atBottom, setAtBottom] = useState(false)
+  const [triggered, setTriggered] = useState(false)
   const [tilt, setTilt] = useState({ x: 0, y: 0 })
 
   const reduceMotion = useRef(false)
@@ -43,7 +45,10 @@ export default function HexNav() {
   // Dock to the corner once the hero has scrolled away.
   useEffect(() => {
     reduceMotion.current = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const onScroll = () => setDocked(window.scrollY > window.innerHeight * 0.55)
+    const onScroll = () => {
+      setDocked(window.scrollY > window.innerHeight * 0.55)
+      setAtBottom(window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 80)
+    }
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
@@ -96,7 +101,7 @@ export default function HexNav() {
 
   const innerTransform = docked
     ? `scale(${hovered ? 1.07 : 1})`
-    : `perspective(900px) rotateY(${tilt.x * 12}deg) rotateX(${-tilt.y * 12}deg) translate3d(${tilt.x * 26}px, ${tilt.y * 26}px, 0)`
+    : `perspective(800px) rotateY(${tilt.x * 20}deg) rotateX(${-tilt.y * 20}deg) translate3d(${tilt.x * 48}px, ${tilt.y * 48}px, 0)`
 
   return (
     <div
@@ -113,7 +118,7 @@ export default function HexNav() {
     >
       <div
         className="relative w-full h-full"
-        style={{ transform: innerTransform, transition: 'transform 0.3s ease-out' }}
+        style={{ transform: innerTransform, transition: docked ? 'transform 0.3s ease-out' : 'transform 0.18s ease-out' }}
       >
         {/* Hexagon rings */}
         <svg viewBox="0 0 500 500" fill="none" className="absolute inset-0 w-full h-full">
@@ -124,8 +129,45 @@ export default function HexNav() {
           <polygon points="250,65 410,157 410,343 250,435 90,343 90,157" stroke="#4169E1" strokeWidth="1" opacity="0.22" />
           <polygon points="250,110 371,180 371,320 250,390 129,320 129,180" stroke="#4DA6FF" strokeWidth="0.8" opacity="0.13" />
           <polygon points="250,155 332,203 332,297 250,345 168,297 168,203" stroke="#4DA6FF" strokeWidth="0.5" opacity="0.08" />
-          <circle cx="250" cy="250" r="4" fill="#4169E1" opacity="0.5" />
         </svg>
+
+        {/* Centre point — a hidden trigger. Only pressable once you have reached
+            the very bottom of the page. Reveals the mantra in the footer. */}
+        <button
+          type="button"
+          onClick={() => {
+            if (docked && atBottom) {
+              setTriggered(true)
+              onRevealMantra()
+            }
+          }}
+          aria-label="Reveal"
+          tabIndex={docked && atBottom ? 0 : -1}
+          className="absolute flex items-center justify-center bg-transparent border-0 p-0"
+          style={{
+            left: '50%',
+            top: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: 24,
+            height: 24,
+            pointerEvents: docked && atBottom ? 'auto' : 'none',
+            cursor: docked && atBottom ? 'pointer' : 'default',
+          }}
+        >
+          {atBottom && !triggered && (
+            <span className="absolute inline-flex h-4 w-4 rounded-full bg-electric-blue/50 animate-ping" />
+          )}
+          <span
+            className="relative inline-block rounded-full transition-all duration-300"
+            style={{
+              width: atBottom ? 9 : 5,
+              height: atBottom ? 9 : 5,
+              background: atBottom ? '#4DA6FF' : '#4169E1',
+              boxShadow: atBottom ? '0 0 12px rgba(77,166,255,0.95)' : 'none',
+              opacity: atBottom ? 1 : 0.5,
+            }}
+          />
+        </button>
 
         {/* Navigation points at each vertex */}
         {navPoints.map(p => {

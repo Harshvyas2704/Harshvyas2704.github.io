@@ -18,7 +18,7 @@ export default function About() {
             Background
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-cream mb-4">
-            About
+            About <span className="font-devanagari text-2xl md:text-3xl font-medium text-muted">(परिचय)</span>
           </h2>
         </div>
 

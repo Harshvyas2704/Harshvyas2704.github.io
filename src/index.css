@@ -79,6 +79,11 @@ body {
 .reveal-delay-5 { transition-delay: 0.5s; }
 .reveal-delay-6 { transition-delay: 0.6s; }
 
+/* Devanagari script for Sanskrit section headings */
+.font-devanagari {
+  font-family: 'Noto Sans Devanagari', 'Cabinet Grotesk', sans-serif;
+}
+
 /* Hex clip path utility */
 .hex-clip {
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);

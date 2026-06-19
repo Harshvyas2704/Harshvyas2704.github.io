@@ -18,7 +18,7 @@ export default function Contact() {
             Get in Touch
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-cream mb-4">
-            Contact
+            Contact <span className="font-devanagari text-2xl md:text-3xl font-medium text-muted">(संपर्क)</span>
           </h2>
           <p className="text-muted text-lg max-w-xl">
             Open to interesting problems, new opportunities, and direct conversations.

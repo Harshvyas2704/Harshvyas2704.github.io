@@ -71,7 +71,7 @@ export default function SixFacets() {
             How I Work
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-cream mb-4">
-            The Six Facets
+            The Six Facets <span className="font-devanagari text-2xl md:text-3xl font-medium text-muted">(षण्मुख)</span>
           </h2>
           <p className="text-muted text-lg max-w-xl">
             The principles and perspectives that define how I approach engineering problems.
