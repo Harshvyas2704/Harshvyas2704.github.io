@@ -1,0 +1,17 @@
+{
+  "name": "Harsh Vyas — Software Engineer",
+  "short_name": "Harsh Vyas",
+  "description": "Engineering complex systems into software.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050816",
+  "theme_color": "#050816",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
