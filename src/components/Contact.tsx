@@ -74,7 +74,7 @@ export default function Contact() {
             </div>
 
             <a
-              href="/resume.pdf"
+              href="/Harsh_Vyas_Resume.pdf"
               target="_blank"
               rel="noreferrer"
               className="flex items-center justify-between gap-4 p-6 border border-white/10 hover:border-royal-blue/40 transition-colors group"

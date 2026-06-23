@@ -60,7 +60,7 @@ export default function About() {
                 GitHub ↗
               </a>
               <a
-                href="/resume.pdf"
+                href="/Harsh_Vyas_Resume.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="text-sm text-cream border border-white/20 px-4 py-2 hover:border-royal-blue hover:text-royal-blue transition-all duration-200"

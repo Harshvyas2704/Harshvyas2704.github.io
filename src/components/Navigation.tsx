@@ -52,7 +52,7 @@ export default function Navigation() {
             </a>
           ))}
           <a
-            href="/resume.pdf"
+            href="/Harsh_Vyas_Resume.pdf"
             target="_blank"
             rel="noreferrer"
             className="px-4 py-1.5 border border-royal-blue/70 text-royal-blue text-sm font-medium hover:bg-royal-blue hover:text-white transition-all duration-200"
@@ -93,7 +93,7 @@ export default function Navigation() {
             </a>
           ))}
           <a
-            href="/resume.pdf"
+            href="/Harsh_Vyas_Resume.pdf"
             target="_blank"
             rel="noreferrer"
             className="mt-2 py-2 text-center border border-royal-blue/70 text-royal-blue text-sm font-medium"
