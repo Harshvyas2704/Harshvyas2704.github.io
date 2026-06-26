@@ -82,6 +82,28 @@ export const projects = [
   },
 ]
 
+export const personalProjects = [
+  {
+    id: 'mokshapatam',
+    name: 'MokshaPatam',
+    tagline: 'The Journey to Nirvana',
+    kind: 'Open Source · Game',
+    concept:
+      'A digital recreation of Mokshapat (Kaivalyapat), the ancient Indian spiritual board game and the philosophical ancestor of Snakes and Ladders. A 285-square board maps the soul’s ascent toward Moksha, where snakes are spiritual falls and ladders are ascents.',
+    detail:
+      'A self-initiated study in game state, animation, and faithful systems design. The engine models the full 285-square board with death, rebirth, off-board hells, and realm transitions, driving a luminous soul token that moves square by square across a pinch-zoom, pan-enabled viewport.',
+    tech: ['React Native', 'TypeScript', 'React 19', 'Zustand', 'Reanimated', 'React Navigation'],
+    highlights: [
+      '285-square board engine',
+      'Snakes, ladders, death and rebirth rules',
+      'Pinch-zoom and pan viewport',
+      'Heritage saffron and gold theme',
+    ],
+    github: 'https://github.com/Harshvyas2704/MokshaPatam-The-Journey-to-Nirvan',
+    apk: '',
+  },
+]
+
 export const experience = [
   {
     company: 'Weingenious Technocrats',
