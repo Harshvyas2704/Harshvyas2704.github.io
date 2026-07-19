@@ -88,6 +88,7 @@ export const personalProjects = [
     name: 'MokshaPatam',
     tagline: 'The Journey to Nirvana',
     kind: 'Open Source · Game',
+    watermark: 'मोक्ष',
     concept:
       'A digital recreation of Mokshapat (Kaivalyapat), the ancient Indian spiritual board game and the philosophical ancestor of Snakes and Ladders. A 285-square board maps the soul’s ascent toward Moksha, where snakes are spiritual falls and ladders are ascents.',
     detail:
@@ -101,6 +102,30 @@ export const personalProjects = [
     ],
     github: 'https://github.com/Harshvyas2704/MokshaPatam-The-Journey-to-Nirvan',
     apk: '',
+    demo: 'https://www.youtube.com/shorts/IYFnRcQXwNE',
+    live: '',
+  },
+  {
+    id: 'threadly',
+    name: 'Threadly',
+    tagline: 'Communities, Threads, and Discussion at Scale',
+    kind: 'Open Source · Full-Stack Platform',
+    watermark: 'संवाद',
+    concept:
+      'A Reddit-style community platform where people create communities, share text, link, and image posts, and hold threaded discussions. Built as an end-to-end study in production backend architecture — auth, caching, job queues, and feed ranking.',
+    detail:
+      'A self-initiated deep dive into the concerns real platforms face at scale. Role-based communities (owner, moderator, member, banned), three-level nested comment threads, and a voting system rate-limited through Redis. Feed ranking splits into a home feed over joined communities and a trending feed, while email notifications run asynchronously through BullMQ job queues. Shipped as a monorepo with a React web client and a React Native mobile app over a shared Express API.',
+    tech: ['Node.js', 'Express', 'MongoDB', 'Redis', 'BullMQ', 'React', 'React Native', 'JWT', 'Cloudinary'],
+    highlights: [
+      'Role-based communities and moderation',
+      'Redis rate-limited voting system',
+      'Home and trending feed algorithms',
+      'BullMQ async email notification queues',
+    ],
+    github: 'https://github.com/Harshvyas2704/Threadly',
+    apk: '',
+    demo: '',
+    live: 'https://threadly-teal-pi.vercel.app/',
   },
 ]
 

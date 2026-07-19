@@ -24,7 +24,7 @@ export default function PersonalProjects() {
         {personalProjects.map((project, i) => (
           <article
             key={project.id}
-            className={`reveal reveal-delay-${i + 1} ${visible ? 'visible' : ''} border border-white/5 hover:border-royal-blue/30 transition-all duration-300 bg-surface group`}
+            className={`reveal reveal-delay-${i + 1} ${visible ? 'visible' : ''} ${i > 0 ? 'mt-10' : ''} border border-white/5 hover:border-royal-blue/30 transition-all duration-300 bg-surface group`}
           >
             <div className="grid grid-cols-1 lg:grid-cols-5">
               {/* Left: identity */}
@@ -34,7 +34,7 @@ export default function PersonalProjects() {
                   className="font-devanagari pointer-events-none absolute -bottom-6 -right-2 text-[120px] leading-none text-royal-blue/[0.06] select-none"
                   aria-hidden
                 >
-                  मोक्ष
+                  {project.watermark}
                 </span>
 
                 <span className="relative text-royal-blue/50 text-xs font-bold tracking-widest uppercase block mb-3">
@@ -86,6 +86,26 @@ export default function PersonalProjects() {
                   >
                     View on GitHub ↗
                   </a>
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-6 py-2.5 border border-white/20 text-cream text-sm font-semibold tracking-wide hover:border-royal-blue hover:text-royal-blue transition-all duration-200"
+                    >
+                      Live Site ↗
+                    </a>
+                  )}
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-6 py-2.5 border border-white/20 text-cream text-sm font-semibold tracking-wide hover:border-royal-blue hover:text-royal-blue transition-all duration-200"
+                    >
+                      Watch Demo ▶
+                    </a>
+                  )}
                   {project.apk && (
                     <a
                       href={project.apk}
