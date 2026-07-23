@@ -162,7 +162,7 @@ export const skills = {
   Mobile: ['React Native', 'Kotlin', 'Native Android', 'Native iOS', 'App Deployment'],
   Frontend: ['React.js', 'Next.js', 'TypeScript', 'HTML', 'CSS'],
   Backend: ['Node.js', 'Express', 'Java', 'Spring Boot'],
-  Database: ['MySQL', 'MongoDB'],
-  AI: ['OpenAI API', 'AI Integration', 'LangChain', 'Prompt Engineering'],
+  Database: ['MySQL', 'PostgreSQL', 'MongoDB'],
+  AI: ['OpenAI API', 'AI Integration', 'Prompt Engineering'],
   Tools: ['Git', 'Firebase', 'WebSockets', 'PhonePe API', 'Postman', 'REST APIs'],
 }
