@@ -1,3 +1,27 @@
+export const profile = {
+  name: 'Harsh Vyas',
+  role: 'Software Engineer',
+  location: 'Rajkot, India',
+  email: 'harshvyasdev@gmail.com',
+  phone: '+91 95379 06343',
+  phoneHref: 'tel:+919537906343',
+  github: 'https://github.com/Harshvyas2704',
+  githubHandle: 'github.com/Harshvyas2704',
+  linkedin: 'https://linkedin.com/in/harsh-vyas',
+  linkedinHandle: 'linkedin.com/in/harsh-vyas',
+  resume: '/Harsh_Vyas_Resume.pdf',
+  tagline: 'React Native → Full Stack → Backend',
+  focusAreas: ['Mobile Engineering', 'Backend Systems', 'AI Integration', 'Product Thinking'],
+}
+
+/** Shared contact links — rendered by both the Contact section and the terminal. */
+export const contact = [
+  { label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
+  { label: 'LinkedIn', value: profile.linkedinHandle, href: profile.linkedin },
+  { label: 'GitHub', value: profile.githubHandle, href: profile.github },
+  { label: 'Phone', value: profile.phone, href: profile.phoneHref },
+]
+
 export const facets = [
   {
     id: 'system-thinker',

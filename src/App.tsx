@@ -10,6 +10,7 @@ import Skills from './components/Skills'
 import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import Terminal from './components/terminal/Terminal'
 import { useState } from 'react'
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
       <About />
       <Contact />
       <Footer revealed={mantraRevealed} />
+      <Terminal />
     </div>
   )
 }

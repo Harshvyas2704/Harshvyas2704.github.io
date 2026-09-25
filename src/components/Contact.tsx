@@ -1,11 +1,5 @@
 import { useIntersection } from '../hooks/useIntersection'
-
-const contactLinks = [
-  { label: 'Email', value: 'harshvyasdev@gmail.com', href: 'mailto:harshvyasdev@gmail.com' },
-  { label: 'LinkedIn', value: 'linkedin.com/in/harsh-vyas', href: 'https://linkedin.com/in/harsh-vyas' },
-  { label: 'GitHub', value: 'github.com/Harshvyas2704', href: 'https://github.com/Harshvyas2704' },
-  { label: 'Phone', value: '+91 95379 06343', href: 'tel:+919537906343' },
-]
+import { contact as contactLinks } from '../data/portfolio'
 
 export default function Contact() {
   const { ref, visible } = useIntersection()
