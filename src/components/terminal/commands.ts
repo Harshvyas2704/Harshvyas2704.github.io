@@ -1,5 +1,6 @@
 import { line } from './engine'
 import { portfolioCommands } from './portfolioCommands'
+import { extraCommands } from './extraCommands'
 import { easterEggs } from './easterEggs'
 import { filesystemCommands } from './filesystem'
 import type { Command, CommandGroup, TerminalContext, TerminalEntry } from './types'
@@ -62,6 +63,7 @@ const systemCommands: Command[] = [
  */
 export const commands: Command[] = [
   ...portfolioCommands,
+  ...extraCommands,
   ...systemCommands,
   ...filesystemCommands,
   ...easterEggs,

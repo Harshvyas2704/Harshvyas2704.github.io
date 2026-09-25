@@ -38,6 +38,35 @@ export function resolveCommand(name: string, registry: Command[]): Command | und
   )
 }
 
+/** Levenshtein edit distance (small strings only). */
+function editDistance(a: string, b: string): number {
+  const dp = Array.from({ length: a.length + 1 }, (_, i) => [i, ...new Array(b.length).fill(0)])
+  for (let j = 0; j <= b.length; j++) dp[0][j] = j
+  for (let i = 1; i <= a.length; i++) {
+    for (let j = 1; j <= b.length; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1
+      dp[i][j] = Math.min(dp[i - 1][j] + 1, dp[i][j - 1] + 1, dp[i - 1][j - 1] + cost)
+    }
+  }
+  return dp[a.length][b.length]
+}
+
+/** Nearest visible command name to an unknown input, if close enough. */
+export function suggestCommand(name: string, registry: Command[]): string | undefined {
+  let best: string | undefined
+  let bestDist = Infinity
+  for (const c of registry) {
+    if (c.hidden) continue
+    const d = editDistance(name, c.name)
+    if (d < bestDist) {
+      bestDist = d
+      best = c.name
+    }
+  }
+  // Only suggest when it's a plausible typo (<= 2 edits, or a clear prefix).
+  return best && bestDist <= 2 ? best : undefined
+}
+
 /**
  * Execute a parsed command against the registry. Never throws: handler
  * errors are caught and surfaced as an error line so the terminal survives.
@@ -52,10 +81,11 @@ export function runCommand(
 
   const command = resolveCommand(name, registry)
   if (!command) {
-    return [
-      line(`Command not found: ${name}`, 'error'),
-      line('Type "help" to see available commands.', 'info'),
-    ]
+    const suggestion = suggestCommand(name, registry)
+    const out = [line(`Command not found: ${name}`, 'error')]
+    if (suggestion) out.push(line(`Did you mean "${suggestion}"?`, 'info'))
+    out.push(line('Type "help" to see available commands.', 'info'))
+    return out
   }
 
   try {

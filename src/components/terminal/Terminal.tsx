@@ -8,18 +8,33 @@ import MatrixEffect from './MatrixEffect'
 import { commands } from './commands'
 import { allProjects } from './data'
 import { FS_DIRS } from './filesystem'
+import { BANNER } from './extraCommands'
 import { line, makeId, runCommand } from './engine'
 import type { TerminalContext, TerminalEntry } from './types'
 
 const TITLE = 'harsh@portfolio:~'
 const BOOT_STEP_MS = 90
+const HIST_KEY = 'term.history'
+const MAX_KEY = 'term.max'
 
 const prefersReducedMotion = () =>
   typeof window !== 'undefined' &&
   window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
 
+/** Load persisted command history (per-browser, best-effort). */
+function loadHistory(): string[] {
+  try {
+    const v = JSON.parse(localStorage.getItem(HIST_KEY) || '[]')
+    return Array.isArray(v) ? v.filter(x => typeof x === 'string') : []
+  } catch {
+    return []
+  }
+}
+
 function welcomeEntries(): TerminalEntry[] {
   return [
+    ...BANNER.map(l => line(l, 'info')),
+    line(''),
     line('Welcome to harsh@portfolio', 'success'),
     line(''),
     line('Developer terminal initialized.'),
@@ -50,15 +65,21 @@ const COMPLETABLE = commands
 
 export default function Terminal() {
   const [isOpen, setIsOpen] = useState(false)
-  const [maximized, setMaximized] = useState(false)
+  const [maximized, setMaximized] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem(MAX_KEY) === '1'
+    } catch {
+      return false
+    }
+  })
   const [entries, setEntries] = useState<TerminalEntry[]>([])
   const [input, setInput] = useState('')
   const [hasBooted, setHasBooted] = useState(false)
   const [booting, setBooting] = useState(false)
 
   // Command history (chronological). histPos === length means "editing a fresh line".
-  const [cmdHistory, setCmdHistory] = useState<string[]>([])
-  const [histPos, setHistPos] = useState(0)
+  const [cmdHistory, setCmdHistory] = useState<string[]>(loadHistory)
+  const [histPos, setHistPos] = useState(() => loadHistory().length)
 
   // Fake filesystem cwd + matrix easter-egg overlay.
   const [cwd, setCwd] = useState('~')
@@ -169,6 +190,23 @@ export default function Terminal() {
     if (!isOpen) setMatrixOn(false)
   }, [isOpen])
 
+  // Persist history + maximized state per browser (best-effort).
+  useEffect(() => {
+    try {
+      localStorage.setItem(HIST_KEY, JSON.stringify(cmdHistory.slice(-50)))
+    } catch {
+      /* storage unavailable — ignore */
+    }
+  }, [cmdHistory])
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(MAX_KEY, maximized ? '1' : '0')
+    } catch {
+      /* storage unavailable — ignore */
+    }
+  }, [maximized])
+
   // Keep the newest output in view.
   useLayoutEffect(() => {
     const el = scrollRef.current
@@ -193,6 +231,17 @@ export default function Terminal() {
       }
       return false
     },
+    navigate: (elementId: string) => {
+      const el = document.getElementById(elementId)
+      if (!el) return false
+      close()
+      window.setTimeout(
+        () => el.scrollIntoView({ behavior: 'smooth', block: 'start' }),
+        120,
+      )
+      return true
+    },
+    history: cmdHistory,
     registry: commands,
   }
 

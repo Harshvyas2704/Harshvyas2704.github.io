@@ -38,6 +38,10 @@ export interface TerminalContext {
   cwd: string
   /** Change directory in the fake filesystem. Returns true if the dir exists. */
   setDirectory: (dir: string) => boolean
+  /** Scroll the underlying portfolio to an element id and close the terminal. Returns true if found. */
+  navigate: (elementId: string) => boolean
+  /** Command history (chronological), for the `history` command. */
+  history: string[]
   registry: Command[]
 }
 

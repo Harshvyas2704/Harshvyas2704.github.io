@@ -24,7 +24,8 @@ export default function PersonalProjects() {
         {personalProjects.map((project, i) => (
           <article
             key={project.id}
-            className={`reveal reveal-delay-${i + 1} ${visible ? 'visible' : ''} ${i > 0 ? 'mt-10' : ''} border border-white/5 hover:border-royal-blue/30 transition-all duration-300 bg-surface group`}
+            id={`project-${project.id}`}
+            className={`reveal reveal-delay-${i + 1} ${visible ? 'visible' : ''} ${i > 0 ? 'mt-10' : ''} border border-white/5 hover:border-royal-blue/30 transition-all duration-300 bg-surface group scroll-mt-24`}
           >
             <div className="grid grid-cols-1 lg:grid-cols-5">
               {/* Left: identity */}

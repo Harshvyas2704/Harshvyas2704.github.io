@@ -15,7 +15,8 @@ function ProjectCard({
 
   return (
     <article
-      className={`reveal reveal-delay-${index + 1} ${visible ? 'visible' : ''} border border-white/5 hover:border-royal-blue/30 transition-all duration-300 group`}
+      id={`project-${project.id}`}
+      className={`reveal reveal-delay-${index + 1} ${visible ? 'visible' : ''} border border-white/5 hover:border-royal-blue/30 transition-all duration-300 group scroll-mt-24`}
     >
       {/* Header */}
       <div className="bg-surface p-8 border-b border-white/5">
